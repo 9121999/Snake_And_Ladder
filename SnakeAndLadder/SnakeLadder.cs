@@ -8,11 +8,13 @@ namespace SnakeLadderProblem
 {
     internal class SankeLadder
     {
+        int position = 0;
+        Random random = new Random();
         
         public void GamePlay()
         {
-            int position = 0;
-            Console.WriteLine("Game is Start");
+            int num = random.Next(1, 7);
+            Console.WriteLine("Die number is: " + num);
         }
     }
 }
