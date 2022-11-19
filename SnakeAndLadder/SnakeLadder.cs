@@ -8,7 +8,7 @@ namespace SnakeLadderProblem
 {
     internal class SankeLadder
     {
-        int position = 0;
+        int position = 0, count = 0;
         Random random = new Random();
         
         public void GamePlay()
@@ -21,13 +21,14 @@ namespace SnakeLadderProblem
                 {
                     case 0:
                         Console.WriteLine("Player is in the same position");
+                        count++;
                         break;
                     case 1:
-
+                        count++;
                         if (position > 93)
                         {
                             int hundred = 100 - position;
-                            Console.WriteLine("Game in last phase  and position is :" + position);
+                            Console.WriteLine("Game is in the LAST PHASE and position is :" + position);
                             if (hundred >= num)
                             {
                                 position += num;
@@ -35,7 +36,7 @@ namespace SnakeLadderProblem
                             }
                             else
                             {
-                                Console.WriteLine("Wait For the next round until you get the exact position");
+                                Console.WriteLine("Wait For the Next Round Until you get the exact 100");
                             }
                         }
                         else
@@ -46,8 +47,10 @@ namespace SnakeLadderProblem
 
                         break;
                     case 2:
+                        count++;
                         if (position > 93)
                         {
+                            Console.WriteLine("Snake or Negative part is end");
                             break;
                         }
                         position -= num;
@@ -60,7 +63,7 @@ namespace SnakeLadderProblem
                         break;
                 }
             }
-
+            Console.WriteLine("total number of DICE roll to win a game is " + count);
         }
     }
 }
